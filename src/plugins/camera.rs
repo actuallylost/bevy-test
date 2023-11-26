@@ -1,7 +1,7 @@
 use bevy::prelude::*;
 use bevy_flycam::{NoCameraPlayerPlugin, FlyCam};
 
-struct CameraPlugin;
+pub struct CameraPlugin;
 
 impl Plugin for CameraPlugin {
     fn build(&self, app: &mut App) {

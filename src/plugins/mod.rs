@@ -1,2 +1,2 @@
-mod life;
-mod camera;
+pub mod life;
+pub mod camera;

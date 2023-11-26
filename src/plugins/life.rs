@@ -1,7 +1,7 @@
 use bevy::prelude::*;
 use rand::random;
 
-struct LifePlugin;
+pub struct LifePlugin;
 
 // Components
 #[derive(Component)]
