@@ -9,6 +9,7 @@ edition = "2021"
 bevy = { version = "0.12.0", features = ["dynamic_linking"] }
 bevy_flycam = { git = "https://github.com/sburris0/bevy_flycam" }
 bevy_editor_pls = "0.6"
+rand = "0.8.4"
 
 [profile.dev]
 opt-level = 1
