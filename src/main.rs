@@ -6,9 +6,23 @@ use rand::random;
 
 // Components
 #[derive(Component)]
-pub struct State(bool);
+struct IsAlive(bool);
+
+impl Default for IsAlive {
+    fn default() -> Self {
+        IsAlive(true)
+    }
+}
 #[derive(Component)]
-pub struct Position{
+struct IsNearLife(bool);
+
+impl Default for IsNearLife {
+    fn default() -> Self {
+        IsNearLife(false)
+    }
+}
+#[derive(Component)]
+struct Position{
     x: f32,
     y: f32
 }
@@ -16,8 +30,19 @@ pub struct Position{
 // Bundles
 #[derive(Bundle)]
 struct LifeBundle {
-    pub state: State,
+    pub is_alive: IsAlive,
+    pub is_near_life: IsNearLife,
     pub position: Position
+}
+
+impl Default for LifeBundle {
+    fn default() -> Self {
+        LifeBundle {
+            is_alive: IsAlive::default(),
+            is_near_life: IsNearLife::default(),
+            position: Position{x: random::<f32>(), y: random::<f32>()}
+        }
+    }
 }
 
 fn main() {
@@ -34,17 +59,14 @@ fn setup_cam(mut commands: Commands) {
 }
 
 // Create 2d plane
-fn create_world(mut _commands: Commands) {
-    todo!("Implement world building");
+fn create_world(mut commands: Commands) {
+    commands.spawn(Camera2dBundle::default());
 }
 
 
 // Spawns life into the world
 fn spawn_life(mut commands: Commands) {
-    let life = LifeBundle {
-        state: State(random::<bool>()),
-            position: Position{x: random::<f32>(), y: random::<f32>()}
-        };
+    let life = LifeBundle::default();
             
     commands.spawn(life);
 }
