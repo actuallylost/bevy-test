@@ -1,11 +1,12 @@
-mod plugins;
+pub mod life;
+pub mod camera;
 
 // Bevy
 use bevy::prelude::*;
 use bevy_editor_pls::prelude::*;
-// Plugins
-use plugins::life::*;
-use plugins::camera::*;
+
+use life::LifePlugin;
+use camera::CameraPlugin;
 
 fn main() {
     App::new()
