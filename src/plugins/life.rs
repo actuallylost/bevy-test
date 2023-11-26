@@ -1,6 +1,7 @@
 use bevy::prelude::*;
 
-pub struct LifePlugin;
+struct LifePlugin;
+const PLGN_NAME: &str = "LifePlugin"; 
     
 impl Plugin for LifePlugin {
     fn build(&self, _app: &mut App) {
@@ -8,7 +9,7 @@ impl Plugin for LifePlugin {
     }
 
     fn name(&self) -> &str {
-        todo!("Implement")
+        PLGN_NAME
     }
 
     fn ready(&self, _app: &App) -> bool {

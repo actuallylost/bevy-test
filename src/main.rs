@@ -1,4 +1,4 @@
-pub mod plugins;
+mod plugins;
 
 use bevy::prelude::*;
 use bevy_editor_pls::prelude::*;
