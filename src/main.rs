@@ -8,7 +8,10 @@ use rand::random;
 #[derive(Component)]
 pub struct State(bool);
 #[derive(Component)]
-pub struct Position{x: f32, y: f32}
+pub struct Position{
+    x: f32,
+    y: f32
+}
 
 // Bundles
 #[derive(Bundle)]
@@ -20,7 +23,7 @@ struct LifeBundle {
 fn main() {
     App::new()
     .add_plugins((DefaultPlugins, EditorPlugin::default(), NoCameraPlayerPlugin))
-    .add_systems(Startup, (setup_cam, create_world, spawn_life, spawn_cubes))
+    .add_systems(Startup, (setup_cam, create_world, spawn_cubes))
     .add_systems(Update, spawn_life)
     .run();
 }
