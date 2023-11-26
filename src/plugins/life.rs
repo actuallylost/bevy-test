@@ -1,5 +1,5 @@
 use bevy::prelude::*;
-use rand::prelude::*;
+use rand::random;
 
 struct LifePlugin;
 
@@ -29,12 +29,12 @@ impl Plugin for LifePlugin {
     }
 }
 
-// Spawns 
+// Spawns life into the world
 fn spawn_life(mut cmd: Commands) {
     let life = LifeBundle {
         state: State(random::<bool>()),
         position: Position{ x: random::<f32>(), y: random::<f32>() }
     };
-    
+
     cmd.spawn(life);
 }
