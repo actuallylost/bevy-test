@@ -64,10 +64,14 @@ fn create_world(mut commands: Commands) {
 
 
 // Spawn life into the world
-fn spawn_life(mut commands: Commands) {
+fn spawn_life(mut commands: Commands, time: Res<Time>, keys: Res<Input<KeyCode>>) {
     let life = TileBundle::new(IsAlive(true), IsNearLife(false), Tile::default());
     
-    commands.spawn(life);
+    let space = keys.pressed(KeyCode::Space);
+
+    if space {
+        spawn_life;
+    }
 }
 
 // fn spawn_cubes(mut commands: Commands, mut mesh_assets: ResMut<Assets<Mesh>>) {
