@@ -298,6 +298,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "bevy-test"
+version = "0.1.0"
+dependencies = [
+ "bevy",
+]
+
+[[package]]
 name = "bevy_a11y"
 version = "0.13.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -885,13 +892,6 @@ dependencies = [
  "concurrent-queue",
  "futures-lite",
  "wasm-bindgen-futures",
-]
-
-[[package]]
-name = "bevy_test"
-version = "0.1.0"
-dependencies = [
- "bevy",
 ]
 
 [[package]]
