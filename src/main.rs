@@ -1,8 +1,10 @@
+mod asteroids;
 mod camera;
 mod debug;
 mod movement;
 mod spaceship;
 
+use asteroids::AsteroidsPlugin;
 use bevy::prelude::*;
 use camera::CameraPlugin;
 use debug::DebugPlugin;
@@ -21,6 +23,7 @@ fn main() {
             DefaultPlugins,
             // Game's Plugins
             SpaceshipPlugin,
+            AsteroidsPlugin,
             CameraPlugin,
             MovementPlugin,
             DebugPlugin,
