@@ -5,6 +5,30 @@ pub struct Velocity {
     pub value: Vec3,
 }
 
+impl Velocity {
+    pub fn new(value: Vec3) -> Self {
+        Self { value }
+    }
+}
+
+#[derive(Component, Debug)]
+pub struct Acceleration {
+    pub value: Vec3,
+}
+
+impl Acceleration {
+    pub fn new(value: Vec3) -> Self {
+        Self { value }
+    }
+}
+
+#[derive(Bundle)]
+pub struct MovingObjectBundle {
+    pub velocity: Velocity,
+    pub acceleration: Acceleration,
+    pub model: SceneBundle,
+}
+
 pub struct MovementPlugin;
 
 impl Plugin for MovementPlugin {
