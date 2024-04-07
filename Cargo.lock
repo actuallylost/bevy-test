@@ -298,13 +298,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "bevy-test"
-version = "0.1.0"
-dependencies = [
- "bevy",
-]
-
-[[package]]
 name = "bevy_a11y"
 version = "0.13.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3017,6 +3010,13 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e6845563ada680337a52d43bb0b29f396f2d911616f6573012645b9e3d048a49"
 dependencies = [
  "serde",
+]
+
+[[package]]
+name = "spaceship-game"
+version = "0.1.0"
+dependencies = [
+ "bevy",
 ]
 
 [[package]]
