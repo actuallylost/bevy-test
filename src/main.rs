@@ -4,9 +4,11 @@ mod camera;
 mod collision_detection;
 mod debug;
 mod despawn;
+mod health;
 mod movement;
 mod schedule;
 mod spaceship;
+mod state;
 
 use asset_loader::AssetLoaderPlugin;
 use asteroids::AsteroidsPlugin;
@@ -19,6 +21,7 @@ use schedule::SchedulePlugin;
 use spaceship::SpaceshipPlugin;
 
 use bevy::prelude::*;
+use state::StatePlugin;
 
 fn main() {
     App::new()
@@ -31,6 +34,7 @@ fn main() {
         .add_plugins((
             DefaultPlugins,
             // Game's Plugins
+            StatePlugin,
             AssetLoaderPlugin,
             SchedulePlugin,
             CollisionDetectionPlugin,
