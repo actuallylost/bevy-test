@@ -1,4 +1,4 @@
-use bevy::{prelude::*, transform, utils::HashMap};
+use bevy::{prelude::*, utils::HashMap};
 
 #[derive(Component, Debug)]
 pub struct Collider {
@@ -7,7 +7,7 @@ pub struct Collider {
 }
 
 impl Collider {
-    pub fn new(radius: f32, colliding_entities: Vec<Entity>) -> Self {
+    pub fn new(radius: f32) -> Self {
         Self {
             radius,
             colliding_entities: vec![],
