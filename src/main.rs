@@ -19,9 +19,9 @@ use despawn::DespawnPlugin;
 use movement::MovementPlugin;
 use schedule::SchedulePlugin;
 use spaceship::SpaceshipPlugin;
+use state::StatePlugin;
 
 use bevy::prelude::*;
-use state::StatePlugin;
 
 fn main() {
     App::new()
