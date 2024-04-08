@@ -9,13 +9,14 @@ mod spaceship;
 
 use asset_loader::AssetLoaderPlugin;
 use asteroids::AsteroidsPlugin;
-use bevy::prelude::*;
 use camera::CameraPlugin;
 use collision_detection::CollisionDetectionPlugin;
 use debug::DebugPlugin;
 use despawn::DespawnPlugin;
 use movement::MovementPlugin;
 use spaceship::SpaceshipPlugin;
+
+use bevy::prelude::*;
 
 fn main() {
     App::new()

@@ -7,7 +7,6 @@ use crate::{
     asset_loader::SceneAssets,
     collision_detection::Collider,
     movement::{Acceleration, MovingObjectBundle, Velocity},
-    spaceship::Spaceship,
 };
 
 const VELOCITY_SCALAR: f32 = 5.0;
