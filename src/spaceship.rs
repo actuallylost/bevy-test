@@ -2,19 +2,24 @@ use bevy::prelude::*;
 
 use crate::{
     asset_loader::SceneAssets,
-    collision_detection::Collider,
+    collision_detection::{Collider, CollisionDamage},
+    health::Health,
     movement::{Acceleration, MovingObjectBundle, Velocity},
     schedule::InGameSet,
 };
 
 const STARTING_TRANSLATION: Vec3 = Vec3::new(0.0, 0.0, -20.0);
+const SPACESHIP_RADIUS: f32 = 5.0;
 const SPACESHIP_SPEED: f32 = 25.0;
 const SPACESHIP_ROTATION_SPEED: f32 = 2.5;
 const SPACESHIP_ROLL_SPEED: f32 = 2.5;
-const SPACESHIP_RADIUS: f32 = 5.0;
+const SPACESHIP_HEALTH: f32 = 100.0;
+const SPACESHIP_COLLISION_DAMAGE: f32 = 100.0;
 const MISSLE_SPEED: f32 = 50.0;
 const MISSLE_FORWARD_SPAWN_SCALAR: f32 = 7.5;
 const MISSLE_RADIUS: f32 = 1.0;
+const MISSLE_HEALTH: f32 = 1.0;
+const MISSLE_COLLISION_DAMAGE: f32 = 5.0;
 
 #[derive(Component, Debug)]
 pub struct Spaceship;
@@ -55,6 +60,8 @@ fn spawn_spaceship(mut commands: Commands, scene_assets: Res<SceneAssets>) {
             },
         },
         Spaceship,
+        Health::new(SPACESHIP_HEALTH),
+        CollisionDamage::new(SPACESHIP_COLLISION_DAMAGE),
     ));
 }
 
@@ -125,6 +132,8 @@ fn spaceship_weapon_controls(
                 },
             },
             SpaceshipMissle,
+            Health::new(MISSLE_HEALTH),
+            CollisionDamage::new(MISSLE_COLLISION_DAMAGE),
         ));
     }
 }
