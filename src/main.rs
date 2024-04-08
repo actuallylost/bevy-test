@@ -29,7 +29,7 @@ fn main() {
             AsteroidsPlugin,
             CameraPlugin,
             MovementPlugin,
-            DebugPlugin,
+            // DebugPlugin,
         ))
         .run();
 }
