@@ -160,7 +160,7 @@ fn spaceship_destoyed(
     mut next_state: ResMut<NextState<GameState>>,
     query: Query<(), With<Spaceship>>,
 ) {
-    if query.get_single().is_ok() {
+    if query.get_single().is_err() {
         next_state.set(GameState::GameOver);
     }
 }
